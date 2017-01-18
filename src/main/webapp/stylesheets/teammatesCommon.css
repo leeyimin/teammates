@@ -420,6 +420,10 @@ Apply to thead to make headers not bold.
     border: 2px solid red;
 }
 
+.navbar-brand {
+    padding: 0;
+}
+
 /* Code to morph navbar to hamburger at tablet size (992px) instead of phone size (768px) */
 /* Prevents content overflow in navbar*/
 
