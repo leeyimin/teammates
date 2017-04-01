@@ -32,7 +32,7 @@ public class StudentSearchTest extends BaseSearchTest {
         StudentAttributes stu1InUnregCourse = dataBundle.students.get("student1InUnregisteredCourse");
         StudentAttributes stu2InUnregCourse = dataBundle.students.get("student2InUnregisteredCourse");
         StudentAttributes stu1InArchCourse = dataBundle.students.get("student1InArchivedCourse");
-
+        StudentAttributes stu1InTsCourse = dataBundle.students.get("student1InTestingSanitizationCourse");
         ______TS("success: search for students in whole system; query string does not match any student");
 
         StudentSearchResultBundle bundle =
@@ -45,9 +45,9 @@ public class StudentSearchTest extends BaseSearchTest {
 
         bundle = studentsDb.searchStudentsInWholeSystem("student1");
 
-        assertEquals(4, bundle.numberOfResults);
+        assertEquals(5, bundle.numberOfResults);
         AssertHelper.assertSameContentIgnoreOrder(
-                     Arrays.asList(stu1InCourse1, stu1InCourse2, stu1InUnregCourse, stu1InArchCourse),
+                     Arrays.asList(stu1InCourse1, stu1InCourse2, stu1InUnregCourse, stu1InArchCourse, stu1InTsCourse),
                      bundle.studentList);
 
         ______TS("success: search for students in whole system; query string should be case-insensitive");

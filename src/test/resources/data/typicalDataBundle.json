@@ -107,6 +107,23 @@
       "isInstructor": false,
       "email": "student1InCourse1@gmail.tmt",
       "institute": "TEAMMATES Test Institute 1"
+    },
+    "student1InTestingSanitizationCourse": {
+      "googleId": "student1InTestingSanitizationCourse",
+      "name": "student1 in Testing Sanitization Course",
+      "isInstructor": false,
+      "email": "normal@sanitization.tmt",
+      "institute": "TEAMMATES Test Sanitization Institute",
+      "studentProfile": {
+        "googleId": "student1InTestingSanitizationCourse",
+        "shortName": "Stud1<script> alert('hi!'); </script>",
+        "email": "weird&'@gmail.tmt",
+        "institute": "inst<script> alert('hi!'); </script>",
+        "nationality": "American",
+        "gender": "other",
+        "moreInfo": "I am just a student :P<script> alert('hi!'); </script>",
+        "pictureKey": "asdf34&hfn3!@"
+      }
     }
   },
   "courses": {
@@ -140,6 +157,12 @@
     "unregisteredCourse": {
       "id": "idOfUnregisteredCourse",
       "name": "Unregistered Course",
+      "timeZone": "UTC"
+    },
+    "testingSanitizationCourse": {
+      "createdAt": "2012-04-01 11:58 PM UTC",
+      "id": "idOfTestingSanitizationCourse",
+      "name": "Testing Sanitization Course",
       "timeZone": "UTC"
     }
   },
@@ -494,6 +517,33 @@
         "sectionLevel": {},
         "sessionLevel": {}
       }
+    },
+    "instructor1OfTestingSanitizationCourse": {
+      "googleId": "idOfTestingSanitizationCourse",
+      "courseId": "idOfTestingSanitizationCourse",
+      "name": "Instructor1 TestingSanitizationCourse",
+      "email": "instructor1@sanitization.tmt",
+      "isArchived": false,
+      "role": "Co-owner",
+      "isDisplayedToStudents": true,
+      "displayedName": "Instructor",
+      "privileges": {
+        "courseLevel": {
+          "canviewstudentinsection": true,
+          "cangivecommentinsection": true,
+          "cansubmitsessioninsection": true,
+          "canmodifysessioncommentinsection": true,
+          "canmodifycommentinsection": true,
+          "canmodifycourse": true,
+          "canviewsessioninsection": true,
+          "canmodifysession": true,
+          "canviewcommentinsection": true,
+          "canmodifystudent": true,
+          "canmodifyinstructor": true
+        },
+        "sectionLevel": {},
+        "sessionLevel": {}
+      }
     }
   },
   "students": {
@@ -586,6 +636,15 @@
       "name": "student1 In Course1",
       "comments": "",
       "team": "Team 2.1",
+      "section": "None"
+    },
+    "student1InTestingSanitizationCourse": {
+      "googleId": "student1InTestingSanitizationCourse",
+      "email": "normal@sanitization.tmt",
+      "course": "idOfTestingSanitizationCourse",
+      "name": "student1 in Testing Sanitization Course",
+      "comments": "",
+      "team": "Team 1",
       "section": "None"
     }
   },
