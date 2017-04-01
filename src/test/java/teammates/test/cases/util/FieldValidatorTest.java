@@ -8,6 +8,7 @@ import java.util.Date;
 import org.testng.annotations.Test;
 
 import teammates.common.util.FieldValidator;
+import teammates.common.util.SanitizationHelper;
 import teammates.common.util.StringHelper;
 import teammates.common.util.TimeHelper;
 import teammates.test.cases.BaseTestCase;
@@ -367,9 +368,15 @@ public class FieldValidatorTest extends BaseTestCase {
     public void invalidityInfoFor_invalidGender_returnErrorString() {
         String invalidGender = "alpha male";
         String actual = validator.getInvalidityInfoForGender(invalidGender);
-        assertEquals("Invalid gender should return appropriate error stirng",
+        assertEquals("Invalid gender should return appropriate error string",
                      String.format(GENDER_ERROR_MESSAGE, invalidGender),
                      actual);
+
+        invalidGender = "<script> alert('hi!'); </script>";
+        actual = validator.getInvalidityInfoForGender(invalidGender);
+        assertEquals("Invalid gender should return appropriate error string",
+                String.format(GENDER_ERROR_MESSAGE, SanitizationHelper.sanitizeForHtml(invalidGender)),
+                actual);
     }
 
     @Test
