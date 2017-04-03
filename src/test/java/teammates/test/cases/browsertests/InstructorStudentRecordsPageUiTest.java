@@ -102,6 +102,18 @@ public class InstructorStudentRecordsPageUiTest extends BaseUiTestCase {
         viewPage = getStudentRecordsPage();
         viewPage.verifyHtmlMainContent("/instructorStudentRecordsPageMixedQuestionType.html");
 
+        ______TS("content: no student records, profile with script injection");
+
+        instructor = testData.instructors.get("instructor1OfTestingSanitizationCourse");
+        student = testData.students.get("student1InTestingSanitizationCourse");
+
+        instructorId = instructor.googleId;
+        courseId = instructor.courseId;
+        studentEmail = student.email;
+
+        viewPage = getStudentRecordsPage();
+        viewPage.verifyHtmlMainContent("/instructorStudentRecordsPageNoRecordsWithScriptInjectionProfile.html");
+
     }
 
     private void testLinks() {
