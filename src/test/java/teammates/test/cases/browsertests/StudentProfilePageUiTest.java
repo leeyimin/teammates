@@ -92,6 +92,11 @@ public class StudentProfilePageUiTest extends BaseUiTestCase {
         profilePage = getProfilePageForStudent("studentWithExistingProfile");
         profilePage.verifyHtmlPart(By.id("editProfileDiv"), "/studentProfileEditDivExistingValues.html");
 
+        ______TS("Typical case: existing profile with attempted script injection");
+        profilePage = getProfilePageForStudent("student1InTestingSanitizationCourse");
+        profilePage.verifyHtmlPart(
+                By.id("editProfileDiv"), "/studentProfilePageWithAttemptedScriptInjection.html");
+
         ______TS("Typical case: edit profile picture modal (without existing picture)");
         profilePage = getProfilePageForStudent("studentWithExistingProfile");
         profilePage.showPictureEditor();
