@@ -1,5 +1,7 @@
 package teammates.client.scripts.util;
 
+import teammates.common.util.SanitizationHelper;
+
 /**
  * Utility class that provides methods to help with migrating data to its desanitized form.
  * Contains a private constructor to prevent instantiation of the class.
@@ -31,6 +33,16 @@ public final class DataMigrationForSanitizedDataHelper {
             }
         }
         return false;
+    }
+
+    /**
+     * Returns the desanitized {@code string} if it is sanitized, otherwise returns the unchanged string.
+     */
+    public static String getDesanitizedIfSanitized(String string) {
+        if (isSanitizedHtml(string)) {
+            return SanitizationHelper.desanitizeFromHtml(string);
+        }
+        return string;
     }
 
 }

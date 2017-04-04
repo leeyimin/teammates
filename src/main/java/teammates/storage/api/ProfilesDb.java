@@ -1,9 +1,12 @@
 package teammates.storage.api;
 
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.jdo.JDOHelper;
 import javax.jdo.JDOObjectNotFoundException;
+import javax.jdo.Query;
 
 import teammates.common.datatransfer.attributes.EntityAttributes;
 import teammates.common.datatransfer.attributes.StudentProfileAttributes;
@@ -145,6 +148,24 @@ public class ProfilesDb extends EntitiesDb {
         closePm();
     }
 
+    /**
+     * This method is not scalable. Not to be used unless for admin features.
+     *
+     * @return the list of all students in the database.
+     */
+    @Deprecated
+    public List<StudentProfileAttributes> getAllStudentProfiles() {
+        List<StudentProfileAttributes> list = new LinkedList<>();
+        List<StudentProfile> entities = getStudentProfileEntities();
+
+        for (StudentProfile student : entities) {
+            if (!JDOHelper.isDeleted(student)) {
+                list.add(new StudentProfileAttributes(student));
+            }
+        }
+        return list;
+    }
+
     //-------------------------------------------------------------------------------------------------------
     //-------------------------------------- Helper Functions -----------------------------------------------
     //-------------------------------------------------------------------------------------------------------
@@ -218,5 +239,17 @@ public class ProfilesDb extends EntitiesDb {
     protected Object getEntity(EntityAttributes attributes) {
         // this method is never used and is here only for future expansion and completeness
         return getStudentProfileEntityFromDb(((StudentProfileAttributes) attributes).googleId);
+    }
+
+    @Deprecated
+    @SuppressWarnings("unchecked")
+    /**
+     * Retrieves all student profile entities. This function is not scalable.
+     */
+    public List<StudentProfile> getStudentProfileEntities() {
+
+        Query q = getPm().newQuery(StudentProfile.class);
+
+        return (List<StudentProfile>) q.execute();
     }
 }
