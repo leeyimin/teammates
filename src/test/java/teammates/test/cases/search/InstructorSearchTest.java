@@ -31,6 +31,7 @@ public class InstructorSearchTest extends BaseSearchTest {
         InstructorAttributes insInUnregCourse = dataBundle.instructors.get("instructor5");
         InstructorAttributes ins1InTestingSanitizationCourse =
                 dataBundle.instructors.get("instructor1OfTestingSanitizationCourse");
+        ins1InTestingSanitizationCourse.sanitizeForSaving();
 
         ______TS("success: search for instructors in whole system; query string does not match anyone");
 

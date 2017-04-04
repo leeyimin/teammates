@@ -52,7 +52,7 @@ public class InstructorCourseStudentDetailsPageUiTest extends BaseUiTestCase {
 
         ______TS("content: registered student with attempted script injection");
 
-        instructorId = testData.instructors.get("CCSDetailsUiT.instr").googleId;
+        instructorId = testData.instructors.get("instructor1OfTestingSanitizationCourse").googleId;
         courseId = testData.courses.get("testingSanitizationCourse").getId();
 
         viewPage = getCourseStudentDetailsPage("student1InTestingSanitizationCourse");

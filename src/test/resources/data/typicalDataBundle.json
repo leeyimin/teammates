@@ -110,10 +110,10 @@
     },
     "student1InTestingSanitizationCourse": {
       "googleId": "student1InTestingSanitizationCourse",
-      "name": "student1 in Testing Sanitization Course",
+      "name": "Stud1<script> alert('hi!'); </script>",
       "isInstructor": false,
       "email": "normal@sanitization.tmt",
-      "institute": "TEAMMATES Test Sanitization Institute",
+      "institute": "inst<script> alert('hi!'); </script>",
       "studentProfile": {
         "googleId": "student1InTestingSanitizationCourse",
         "shortName": "Stud1<script> alert('hi!'); </script>",
@@ -122,7 +122,7 @@
         "nationality": "American",
         "gender": "other",
         "moreInfo": "I am just a student :P<script> alert('hi!'); </script>",
-        "pictureKey": "asdf34&hfn3!@"
+        "pictureKey": ""
       }
     }
   },
@@ -162,7 +162,7 @@
     "testingSanitizationCourse": {
       "createdAt": "2012-04-01 11:58 PM UTC",
       "id": "idOfTestingSanitizationCourse",
-      "name": "Testing Sanitization Course",
+      "name": "Testing<script> alert('hi!'); </script>",
       "timeZone": "UTC"
     }
   },
@@ -521,12 +521,12 @@
     "instructor1OfTestingSanitizationCourse": {
       "googleId": "idOfTestingSanitizationCourse",
       "courseId": "idOfTestingSanitizationCourse",
-      "name": "Instructor1 TestingSanitizationCourse",
+      "name": "Instructor<script> alert('hi!'); </script>",
       "email": "instructor1@sanitization.tmt",
       "isArchived": false,
       "role": "Co-owner",
       "isDisplayedToStudents": true,
-      "displayedName": "Instructor",
+      "displayedName": "inst<script>alert('hi!');</script>",
       "privileges": {
         "courseLevel": {
           "canviewstudentinsection": true,
@@ -642,10 +642,10 @@
       "googleId": "student1InTestingSanitizationCourse",
       "email": "normal@sanitization.tmt",
       "course": "idOfTestingSanitizationCourse",
-      "name": "student1 in Testing Sanitization Course",
-      "comments": "",
-      "team": "Team 1",
-      "section": "None"
+      "name": "Stud1<script> alert('hi!'); </script>",
+      "comments": "<script> alert('hi!'); </script>",
+      "team": "Team tags&\"</td>",
+      "section": "Section'</td>"
     }
   },
   "feedbackSessions": {
@@ -1602,6 +1602,28 @@
       "createdAt": "2012-08-01 11:30 PM UTC",
       "commentText": {
         "value": "Comment1 from Instructor 1 to Student 1 in course 2"
+      }
+    },
+    "commentTestingSanitization": {
+      "courseId": "idOfTestingSanitizationCourse",
+      "giverEmail": "instructor1@sanitization.tmt",
+      "recipientType": "PERSON",
+      "recipients": [
+        "normal@sanitization.tmt"
+      ],
+      "status": "FINAL",
+      "showCommentTo": [
+        "INSTRUCTOR"
+      ],
+      "showGiverNameTo": [
+        "INSTRUCTOR"
+      ],
+      "showRecipientNameTo": [
+        "INSTRUCTOR"
+      ],
+      "createdAt": "2012-05-01 9:10 AM UTC",
+      "commentText": {
+        "value": "I am just a comment :P <script> alert('hi!'); </script>"
       }
     }
   },

@@ -35,6 +35,8 @@ public class StudentProfileEditSaveActionTest extends BaseActionTest {
         testActionInMasqueradeMode(student);
 
         student = dataBundle.accounts.get("student1InTestingSanitizationCourse");
+        // simulate sanitization that occurs before persistence
+        student.sanitizeForSaving();
         testActionSuccess(student, "Typical case: attempted script injection");
     }
 
