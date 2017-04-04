@@ -89,7 +89,7 @@ public class StudentProfilePageActionTest extends BaseActionTest {
                                   + "|||true|||Student" + (isMasquerade ? "(M)" : "") + "|||"
                                   + student.name + "|||" + student.googleId + "|||" + student.email
                                   + "|||studentProfile Page Load <br> Profile: "
-                                  + SanitizationHelper.sanitizeForHtml(student.studentProfile.toString())
+                                  + SanitizationHelper.sanitizeForHtmlTag(student.studentProfile.toString())
                                   + "|||/page/studentProfilePage";
         AssertHelper.assertLogMessageEquals(expectedLogMessage, action.getLogMessage());
     }

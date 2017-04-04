@@ -104,7 +104,7 @@ public class InstructorStudentRecordsPageAction extends Action {
                       + "Number of sessions: " + sessions.size() + "<br>"
                       + "Student Profile: "
                       + (studentProfile == null ? "No Profile"
-                                                : SanitizationHelper.sanitizeForHtml(studentProfile.toString()));
+                                                : SanitizationHelper.sanitizeForHtmlTag(studentProfile.toString()));
 
         return createShowPageResult(Const.ViewURIs.INSTRUCTOR_STUDENT_RECORDS, data);
     }

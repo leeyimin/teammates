@@ -25,7 +25,7 @@ public class StudentProfileEditSaveAction extends Action {
             statusToUser.add(new StatusMessage(Const.StatusMessages.STUDENT_PROFILE_EDITED, StatusMessageColor.SUCCESS));
             statusToAdmin = "Student Profile for <span class=\"bold\">(" + account.googleId
                           + ")</span> edited.<br>"
-                          + SanitizationHelper.sanitizeForHtml(account.studentProfile.toString());
+                          + SanitizationHelper.sanitizeForHtmlTag(account.studentProfile.toString());
         } catch (InvalidParametersException ipe) {
             setStatusForException(ipe);
         }

@@ -27,7 +27,7 @@ public class StudentProfilePageAction extends Action {
 
         StudentProfilePageData data = new StudentProfilePageData(account, isEditingPhoto);
         statusToAdmin = "studentProfile Page Load <br> Profile: "
-                + SanitizationHelper.sanitizeForHtml(account.studentProfile.toString());
+                + SanitizationHelper.sanitizeForHtmlTag(account.studentProfile.toString());
 
         return createShowPageResult(Const.ViewURIs.STUDENT_PROFILE_PAGE, data);
     }

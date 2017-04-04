@@ -108,7 +108,7 @@ public class InstructorStudentRecordsPageActionTest extends BaseActionTest {
                                   + "Viewing <span class=\"bold\">" + student.email + "'s</span> records "
                                   + "for Course <span class=\"bold\">[" + instructor.courseId + "]</span><br>"
                                   + "Number of sessions: 6<br>"
-                                  + "Student Profile: " + SanitizationHelper.sanitizeForHtml(expectedProfile.toString())
+                                  + "Student Profile: " + SanitizationHelper.sanitizeForHtmlTag(expectedProfile.toString())
                                   + "|||/page/instructorStudentRecordsPage";
         AssertHelper.assertLogMessageEquals(expectedLogMessage, a.getLogMessage());
 
@@ -198,7 +198,7 @@ public class InstructorStudentRecordsPageActionTest extends BaseActionTest {
                 + "Viewing <span class=\"bold\">" + student.email + "'s</span> records "
                 + "for Course <span class=\"bold\">[" + instructor.courseId + "]</span><br>"
                 + "Number of sessions: 0<br>"
-                + "Student Profile: " + SanitizationHelper.sanitizeForHtml(expectedProfile.toString())
+                + "Student Profile: " + SanitizationHelper.sanitizeForHtmlTag(expectedProfile.toString())
                 + "|||/page/instructorStudentRecordsPage";
         AssertHelper.assertLogMessageEquals(expectedLogMessage, a.getLogMessage());
     }

@@ -175,7 +175,7 @@ public class StudentProfileEditSaveActionTest extends BaseActionTest {
                                   + student.name + "|||" + student.googleId + "|||" + student.email
                                   + "|||Student Profile for <span class=\"bold\">(" + student.googleId
                                   + ")</span> edited.<br>"
-                                  + SanitizationHelper.sanitizeForHtml(expectedProfile.toString())
+                                  + SanitizationHelper.sanitizeForHtmlTag(expectedProfile.toString())
                                   + "|||/page/studentProfileEditSave";
         AssertHelper.assertContainsRegex(expectedLogMessage, action.getLogMessage());
     }
