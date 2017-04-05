@@ -32,6 +32,7 @@ public class StudentSearchTest extends BaseSearchTest {
         StudentAttributes stu1InUnregCourse = dataBundle.students.get("student1InUnregisteredCourse");
         StudentAttributes stu2InUnregCourse = dataBundle.students.get("student2InUnregisteredCourse");
         StudentAttributes stu1InArchCourse = dataBundle.students.get("student1InArchivedCourse");
+
         ______TS("success: search for students in whole system; query string does not match any student");
 
         StudentSearchResultBundle bundle =

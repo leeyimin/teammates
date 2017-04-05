@@ -151,7 +151,7 @@ public class ProfilesDb extends EntitiesDb {
     /**
      * This method is not scalable. Not to be used unless for admin features.
      *
-     * @return the list of all students in the database.
+     * @return the list of all student profiles in the database.
      */
     @Deprecated
     public List<StudentProfileAttributes> getAllStudentProfiles() {
