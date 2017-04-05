@@ -136,6 +136,23 @@ public abstract class BaseActionTest extends BaseComponentTestCase {
         };
     }
 
+    protected String[] createInvalidParamsForProfileWithScriptInjection() {
+        return new String[]{
+                Const.ParamsNames.STUDENT_SHORT_NAME,
+                "short%<script>alert(\"was here\");</script>",
+                Const.ParamsNames.STUDENT_PROFILE_EMAIL,
+                "<script>alert(\"was here\");</script>",
+                Const.ParamsNames.STUDENT_PROFILE_INSTITUTION,
+                "<script>alert(\"was here\");</script>",
+                Const.ParamsNames.STUDENT_NATIONALITY,
+                "USA<script>alert(\"was here\");</script>",
+                Const.ParamsNames.STUDENT_GENDER,
+                "female<script>alert(\"was here\");</script>",
+                Const.ParamsNames.STUDENT_PROFILE_MOREINFO,
+                "This is more info on me<script>alert(\"was here\");</script>"
+        };
+    }
+
     protected String[] createParamsCombinationForFeedbackSession(String courseId, String fsName, int order) {
         String[] typicalCase = createParamsForTypicalFeedbackSession(courseId, fsName);
         if (order == 0) {
