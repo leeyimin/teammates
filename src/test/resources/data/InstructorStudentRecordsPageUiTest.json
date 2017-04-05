@@ -51,6 +51,23 @@
         "moreInfo": "This is a lot of info!",
         "pictureKey": ""
       }
+    },
+    "student1InTestingSanitizationCourse": {
+      "googleId": "student1InTestingSanitizationCourse",
+      "name": "Stud1<script> alert('hi!'); </script>",
+      "isInstructor": false,
+      "email": "normal@sanitization.tmt",
+      "institute": "inst<script> alert('hi!'); </script>",
+      "studentProfile": {
+        "googleId": "student1InTestingSanitizationCourse",
+        "shortName": "Stud1<script> alert('hi!'); </script>",
+        "email": "weird&'@gmail.tmt",
+        "institute": "inst<script> alert('hi!'); </script>",
+        "nationality": "American",
+        "gender": "other",
+        "moreInfo": "I am just a student :P<script> alert('hi!'); </script>",
+        "pictureKey": ""
+      }
     }
   },
   "courses": {
@@ -67,6 +84,12 @@
     "NoEvalCourse": {
       "id": "ISR.NoEval",
       "name": "No Eval Course",
+      "timeZone": "UTC"
+    },
+    "testingSanitizationCourse": {
+      "createdAt": "2012-04-01 11:58 PM UTC",
+      "id": "idOfTestingSanitizationCourse",
+      "name": "Testing<script> alert('hi!'); </script>",
       "timeZone": "UTC"
     }
   },
@@ -200,6 +223,33 @@
         "sectionLevel": {},
         "sessionLevel": {}
       }
+    },
+    "instructor1OfTestingSanitizationCourse": {
+      "googleId": "idOfTestingSanitizationCourse",
+      "courseId": "idOfTestingSanitizationCourse",
+      "name": "Instructor<script> alert('hi!'); </script>",
+      "email": "instructor1@sanitization.tmt",
+      "isArchived": false,
+      "role": "Co-owner",
+      "isDisplayedToStudents": true,
+      "displayedName": "inst<script>alert('hi!');</script>",
+      "privileges": {
+        "courseLevel": {
+          "canviewstudentinsection": true,
+          "cangivecommentinsection": true,
+          "cansubmitsessioninsection": true,
+          "canmodifysessioncommentinsection": true,
+          "canmodifycommentinsection": true,
+          "canmodifycourse": true,
+          "canviewsessioninsection": true,
+          "canmodifysession": true,
+          "canviewcommentinsection": true,
+          "canmodifystudent": true,
+          "canmodifyinstructor": true
+        },
+        "sectionLevel": {},
+        "sessionLevel": {}
+      }
     }
   },
   "students": {
@@ -282,6 +332,15 @@
       "name": "Alice Betsy",
       "comments": "This student's name is Alice Betsy",
       "team": "Team 1</td></div>'\""
+    },
+    "student1InTestingSanitizationCourse": {
+      "googleId": "student1InTestingSanitizationCourse",
+      "email": "normal@sanitization.tmt",
+      "course": "idOfTestingSanitizationCourse",
+      "name": "Stud1<script> alert('hi!'); </script>",
+      "comments": "<script> alert('hi!'); </script>",
+      "team": "Team tags&\"</td>",
+      "section": "Section'</td>"
     }
   },
   "feedbackSessions": {
@@ -779,6 +838,28 @@
       "createdAt": "2012-05-01 9:10 AM UTC",
       "commentText": {
         "value": "Comment from ISR.CS1101 teammates.instr Instructor to Teammates Test, viewable by instructors"
+      }
+    },
+    "commentTestingSanitization": {
+      "courseId": "idOfTestingSanitizationCourse",
+      "giverEmail": "instructor1@sanitization.tmt",
+      "recipientType": "PERSON",
+      "recipients": [
+        "normal@sanitization.tmt"
+      ],
+      "status": "FINAL",
+      "showCommentTo": [
+        "INSTRUCTOR"
+      ],
+      "showGiverNameTo": [
+        "INSTRUCTOR"
+      ],
+      "showRecipientNameTo": [
+        "INSTRUCTOR"
+      ],
+      "createdAt": "2012-05-01 9:10 AM UTC",
+      "commentText": {
+        "value": "I am just a comment :P <script> alert('hi!'); </script>"
       }
     }
   },
