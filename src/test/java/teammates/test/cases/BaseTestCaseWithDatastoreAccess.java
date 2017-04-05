@@ -187,6 +187,7 @@ public abstract class BaseTestCaseWithDatastoreAccess extends BaseTestCase {
                 expected.studentProfile.googleId = actual.googleId;
             }
             expected.studentProfile.modifiedDate = actual.studentProfile.modifiedDate;
+            expected.sanitizeForSaving();
         }
     }
 
@@ -199,8 +200,10 @@ public abstract class BaseTestCaseWithDatastoreAccess extends BaseTestCase {
     }
 
     private void equalizeIrrelevantData(CourseAttributes expected, CourseAttributes actual) {
-        // Ignore time field as it is stamped at the time of creation in testing
+        // ignore time field as it is stamped at the time of creation in testing
         expected.createdAt = actual.createdAt;
+        // sanitize fields
+        expected.sanitizeForSaving();
     }
 
     protected FeedbackQuestionAttributes getFeedbackQuestion(FeedbackQuestionAttributes fq) {
@@ -241,6 +244,8 @@ public abstract class BaseTestCaseWithDatastoreAccess extends BaseTestCase {
         if (actual.key != null) {
             expected.key = actual.key;
         }
+        // sanitize fields
+        expected.sanitizeForSaving();
     }
 
     protected StudentAttributes getStudent(StudentAttributes student) {
